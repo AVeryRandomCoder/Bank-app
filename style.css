@@ -1,0 +1,76 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #111;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #222;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+#bank-app {
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.btn {
+  flex: 1;
+  margin: 0 5px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.credit {
+  background-color: #4caf50;
+  color: white;
+}
+
+.debit {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+#balance {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+}
