@@ -1,31 +1,30 @@
-let balance = 0;
+const outputValueEl = document.getElementById("output-value") as HTMLParagraphElement;
+const addBtn = document.getElementById("+") as HTMLButtonElement;
+const subtractBtn = document.getElementById("-") as HTMLButtonElement;
 
-function updateBalance() {
-  document.getElementById("balance").innerText = `Your Account Balance is: ₹${balance}`;
+function getCurrentBalance(): number {
+    return parseInt(outputValueEl.innerText) || 0;
 }
 
-function credit() {
-  const amount = parseFloat(document.getElementById("amount").value);
-  if (!isNaN(amount) && amount > 0) {
-    balance += amount;
-    updateBalance();
-    document.getElementById("amount").value = "";
-  } else {
-    alert("Please enter a valid amount");
-  }
+function updateBalance(newBalance: number): void {
+    outputValueEl.innerText = newBalance.toString();
 }
 
-function debit() {
-  const amount = parseFloat(document.getElementById("amount").value);
-  if (!isNaN(amount) && amount > 0) {
-    if (amount > balance) {
-      alert("Insufficient balance");
-    } else {
-      balance -= amount;
-      updateBalance();
-      document.getElementById("amount").value = "";
-    }
-  } else {
-    alert("Please enter a valid amount");
-  }
+function getEnteredAmount(): number {
+    // Assuming user enters digits by clicking number buttons
+    return parseInt(prompt("Enter amount") || "0");
 }
+
+addBtn.addEventListener("click", () => {
+    const amount = getEnteredAmount();
+    const currentBalance = getCurrentBalance();
+    const newBalance = currentBalance + amount;
+    updateBalance(newBalance);
+});
+
+subtractBtn.addEventListener("click", () => {
+    const amount = getEnteredAmount();
+    const currentBalance = getCurrentBalance();
+    const newBalance = currentBalance - amount;
+    updateBalance(newBalance);
+});
