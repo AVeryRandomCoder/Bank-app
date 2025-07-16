@@ -17,7 +17,7 @@ if (isNaN(amount) || amount <= 0) {
 
 accountBalance += amount;
 updateBalance();
-amountInput.value = ''; // Clear the input field
+amountInput.value = '';
 }
 
 function debit() {
@@ -37,4 +37,4 @@ if (amount > accountBalance) {
 
 accountBalance -= amount;
 updateBalance();
-amountInput.value = ''; // Clear the input field
+amountInput.value = '';
